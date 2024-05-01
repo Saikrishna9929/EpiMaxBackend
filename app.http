@@ -1,0 +1,55 @@
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "username": "rakesh",
+  "password": "rakesh_567",
+}
+
+###
+
+
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+  "username":"naresh",
+  "password": "naresh@123"
+}
+
+###
+
+GET http://localhost:3001/tasks
+###
+
+
+GET http://localhost:3001/tasks/1/
+
+###
+
+POST http://localhost:3001/tasks/
+Content-Type: application/json
+
+{
+    "id": 1,
+    "title" : "E-commerce Application", 
+    "description" : "Backend should be develop as per requirement", 
+    "status" : "Completed",
+    "assigneeId": 102, 
+    "createdAt" : "2024-03-24 00:00:00", 
+    "updatedAt" : "2024-03-26 00:00:00"
+
+}
+
+###
+
+PUT http://localhost:3001/tasks/1/
+Content-Type: application/json
+
+{
+      "createdAt": "2024-03-25 00:00:00",
+}
+
+###
+
+DELETE http://localhost:3001/tasks/1/
