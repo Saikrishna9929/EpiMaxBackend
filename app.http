@@ -1,15 +1,16 @@
-POST http://localhost:3000/register
+POST http://localhost:3001/register
 Content-Type: application/json
 
 {
-  "username": "rakesh",
-  "password": "rakesh_567",
+  "username":"naresh",
+  "password": "naresh@123"
 }
+
 
 ###
 
 
-POST http://localhost:3000/login/
+POST http://localhost:3001/login/
 Content-Type: application/json
 
 {
@@ -20,36 +21,41 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3001/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmVzaCIsImlhdCI6MTcxNDU4NzMzOH0.tIIrtZ_98t9XxzhN90Wn5YJN8uR2jh564dUgjAfNWp8
 ###
 
 
 GET http://localhost:3001/tasks/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmVzaCIsImlhdCI6MTcxNDU4NzMzOH0.tIIrtZ_98t9XxzhN90Wn5YJN8uR2jh564dUgjAfNWp8
 
 ###
 
 POST http://localhost:3001/tasks/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmVzaCIsImlhdCI6MTcxNDU4NzMzOH0.tIIrtZ_98t9XxzhN90Wn5YJN8uR2jh564dUgjAfNWp8
 Content-Type: application/json
 
 {
-    "id": 1,
-    "title" : "E-commerce Application", 
-    "description" : "Backend should be develop as per requirement", 
-    "status" : "Completed",
-    "assigneeId": 102, 
-    "createdAt" : "2024-03-24 00:00:00", 
-    "updatedAt" : "2024-03-26 00:00:00"
+    "id": 2,
+    "title" : "Todo Application", 
+    "description" : "UI should be Interactive", 
+    "status" : "In Progress",
+    "assigneeId": 103, 
+    "createdAt" : "2024-03-22 00:00:00", 
+    "updatedAt" : "2024-03-23 00:00:00"
 
 }
 
 ###
 
-PUT http://localhost:3001/tasks/1/
+PUT http://localhost:3001/tasks/2/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmVzaCIsImlhdCI6MTcxNDU4NzMzOH0.tIIrtZ_98t9XxzhN90Wn5YJN8uR2jh564dUgjAfNWp8
 Content-Type: application/json
 
 {
-      "createdAt": "2024-03-25 00:00:00",
+      "title": "Todo List App",
 }
 
 ###
 
 DELETE http://localhost:3001/tasks/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmVzaCIsImlhdCI6MTcxNDU4NzMzOH0.tIIrtZ_98t9XxzhN90Wn5YJN8uR2jh564dUgjAfNWp8

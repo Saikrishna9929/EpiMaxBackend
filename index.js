@@ -157,14 +157,8 @@ app.post("/tasks/", authentication, async (request, response) => {
   INSERT INTO
     Tasks (id, title , description, status, assignee_id, created_at, updated_at)
   VALUES
-    ('${id}', "${title}", '${description}','${status}', ${assigneeId},"${format(
-    new Date(createdAt.toLocaleString("en-US", { timeZone: "UTC" })),
-    "yyyy-MM-dd HH:mm:ss"
-  )}",
-     "${format(
-       new Date(updatedAt.toLocaleString("en-US", { timeZone: "UTC" })),
-       "yyyy-MM-dd HH:mm:ss"
-     )}");`;
+    ('${id}', "${title}", '${description}','${status}', ${assigneeId},"${createdAt}",
+     "${updatedAt}");`;
 
   const task = await db.run(postTaskQuery);
   response.send("Task Added to Team");
@@ -216,11 +210,8 @@ app.put("/tasks/:id/", authentication, async (request, response) => {
     description = '${description}', 
     status = '${status}', 
     assignee_id = ${assigneeId}, 
-    created_at = "${format(new Date(createdAt), "yyyy-MM-dd HH:mm:ss")}",
-    updated_at = "${format(
-      new Date(updatedAt.toLocaleString("en-US", { timeZone: "UTC" })),
-      "yyyy-MM-dd HH:mm:ss"
-    )}"
+    created_at = "${createdAt}",
+    updated_at = "${updatedAt}"
   WHERE
     id = ${id};`;
 
